@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <section
       id="header"
-      className="bg-[#F3F1FF] dark:bg-[#4B5563] w-full md:h-[100vh]  xs:h-auto "
+      className="bg-bg_light dark:bg-bg_dark w-full md:h-[100vh]  xs:h-auto "
     >
       <Navbar />
       <Hero />

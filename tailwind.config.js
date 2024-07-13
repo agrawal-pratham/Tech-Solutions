@@ -18,10 +18,8 @@ module.exports = {
       },
       colors: {
         primary: "#1d4ed8",
-      },
-      backgroundImage: {
-        bg_light: "url('/bg.png')",
-        bg_dark: "url('/bg_dark.png')",
+        bg_light: "#F3F1FF",
+        bg_dark: "#4B5563",
       },
     },
   },
