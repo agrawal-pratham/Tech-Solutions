@@ -1,4 +1,4 @@
-import { Theme } from "@/constants/variables";
+import { useThemeContext } from "@/context/ThemeContext";
 import {
   faBars,
   faMoon,
@@ -7,7 +7,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const navItems = [
@@ -18,20 +17,9 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const router = useRouter();
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
-
-  useEffect(() => {
-    if (localStorage.theme === Theme.Dark) {
-      document.documentElement.classList.add(Theme.Dark);
-      setIsDarkMode(true);
-    } else {
-      setIsDarkMode(false);
-      document.documentElement.classList.remove(Theme.Dark);
-    }
-  }, []);
+  const { darkMode, handleChangeTheme } = useThemeContext();
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -46,25 +34,13 @@ export default function Navbar() {
     };
   }, []);
 
-  const handleChangeTheme = () => {
-    if (localStorage.theme !== Theme.Dark) {
-      document.documentElement.classList.add(Theme.Dark);
-      localStorage.theme = Theme.Dark;
-      setIsDarkMode(true);
-    } else {
-      document.documentElement.classList.remove(Theme.Dark);
-      localStorage.theme = Theme.Light;
-      setIsDarkMode(false);
-    }
-  };
-
   const toggleMenu = () => {
     setIsMenuOpen((p) => !p);
   };
 
   return (
     <nav
-      className={`bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 w-full block fixed top-0 shadow-md `}
+      className={`bg-white z-[9999]  border-gray-200 dark:bg-gray-900 dark:border-gray-700 w-full block fixed top-0 shadow-md `}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4  bg-white dark:bg-gray-900">
         <a
@@ -112,7 +88,7 @@ export default function Navbar() {
                 onClick={handleChangeTheme}
                 className="block py-2 px-3 rounded hover:bg-gray-100  md:hover:bg-transparent md:border-0 md:p-0 dark:hover:bg-gray-700 dark:text-white md:dark:hover:bg-transparent !duration-0"
               >
-                {isDarkMode ? (
+                {darkMode ? (
                   <FontAwesomeIcon icon={faSun} />
                 ) : (
                   <FontAwesomeIcon icon={faMoon} />

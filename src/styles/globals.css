@@ -10,8 +10,10 @@
 }
 
 * {
-  transition: background-color var(--transition-speed),
-    color var(--transition-speed);
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--transition-speed);
 }
 body {
   margin: 0;
@@ -26,4 +28,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+#header {
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.clipPath {
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
 }
