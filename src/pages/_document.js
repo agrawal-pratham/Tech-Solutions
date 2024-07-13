@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head></Head>
-      <body className="transition-all duration-1000">
+      <body>
         <Main />
         <NextScript />
       </body>
