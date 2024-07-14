@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Fade, Slide } from "react-awesome-reveal";
 
 const Contact = () => {
@@ -12,7 +11,7 @@ const Contact = () => {
       <div className="container  mx-auto px-4 ">
         <div className="flex flex-wrap">
           <div className="w-full md:w-1/2">
-            <Fade duration={1500} direction="left" triggerOnce>
+            <Fade duration={1500} direction="left" triggerOnce fraction={0}>
               <form
                 onSubmit={handleSubmit}
                 className="bg-bg_light_2 dark:bg-bg_dark_2 shadow-md rounded px-8 pt-6 pb-8 mb-4 backdrop-blur-md"
@@ -69,13 +68,7 @@ const Contact = () => {
           </div>
           <div className="w-full md:w-1/2">
             <Slide triggerOnce direction="right">
-              <Image
-                height={0}
-                width={0}
-                style={{
-                  height: "100%",
-                  width: "100%",
-                }}
+              <img
                 src="/contact.svg"
                 alt="contact_us_image"
                 className="w-full h-auto"
