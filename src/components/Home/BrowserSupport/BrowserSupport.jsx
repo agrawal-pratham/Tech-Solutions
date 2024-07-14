@@ -29,7 +29,7 @@ const BrowserSupport = () => {
   return (
     <div className="p-8  bg-bg_light dark:bg-bg_dark">
       <div className="mb-16 text-center">
-        <h5 className="text-secondary uppercase font-medium mb-2 dark:text-gray-300">
+        <h5 className=" uppercase font-medium mb-2 text-primary dark:text-blue-600">
           Compatibility
         </h5>
         <h2 className="font-bold text-3xl text-gray-800 dark:text-white">

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://solutions.agrawalpratham.in/sitemap.xml

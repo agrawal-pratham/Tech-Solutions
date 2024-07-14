@@ -6,7 +6,9 @@ import { PricingData } from "./pricingData";
 const Pricing = () => {
   return (
     <section className="pricing py-8 px-4 bg-bg_light dark:bg-bg_dark ">
-      <h4 className="text-center text-gray-700 dark:text-gray-300">Pricing</h4>
+      <h4 className="text-center uppercase text-primary dark:text-blue-600">
+        Pricing
+      </h4>
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
           CHOOSE PLAN

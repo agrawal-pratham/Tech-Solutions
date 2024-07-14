@@ -9,9 +9,11 @@ const About = () => {
             <img src="/about.svg" alt="Team" className="w-full md:rounded-lg" />
           </Slide>
         </div>
-        <div className="w-full md:w-6/12 md:p-2 xs:mt-4 md:mt-auto transition-all duration-500">
+        <div className="w-full md:w-6/12 md:p-2 xs:mt-4 md:my-auto transition-all duration-500">
           <Slide duration={2000} direction="right" triggerOnce>
-            <p className="text-xs text-primary dark:text-blue-600">About us</p>
+            <p className="uppercase text-primary dark:text-blue-600">
+              About us
+            </p>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
               HOW WE CAN HELP YOUR{" "}
               <span className="text-primary dark:text-blue-600">BUSINESS</span>{" "}
