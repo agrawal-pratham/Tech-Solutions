@@ -1,7 +1,7 @@
 import { useThemeContext } from "@/context/ThemeContext";
 import { Fade, Slide } from "react-awesome-reveal";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco, vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { docco, vs2015 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 const BuildTools = () => {
   const { darkMode } = useThemeContext();
