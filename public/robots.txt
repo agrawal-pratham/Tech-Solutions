@@ -1,3 +1,9 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://solutions.agrawalpratham.in
+
+# Sitemaps
 Sitemap: https://solutions.agrawalpratham.in/sitemap.xml
