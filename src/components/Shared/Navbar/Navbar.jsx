@@ -1,13 +1,9 @@
 import { useThemeContext } from "@/context/ThemeContext";
-import {
-  faBars,
-  faMoon,
-  faSun,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { HiOutlineMenu } from "react-icons/hi";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -24,7 +20,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleHashChange = () => {
       setActiveHash(window.location.hash);
-      toggleMenu();
+      setIsMenuOpen(false);
     };
     handleHashChange();
     window.addEventListener("hashchange", handleHashChange);
@@ -60,11 +56,15 @@ export default function Navbar() {
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         >
           <span className="sr-only">Open main menu</span>
-          <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
+          {isMenuOpen ? (
+            <IoCloseCircleOutline size={22} />
+          ) : (
+            <HiOutlineMenu size={22} />
+          )}
         </button>
         <div
-          className={`w-full md:block md:w-auto ${
-            isMenuOpen ? "block" : "hidden"
+          className={`w-full md:block md:w-auto md:max-h-dvh transition-all ease-in-out overflow-hidden  duration-1000 ${
+            isMenuOpen ? "max-h-svh" : "max-h-0"
           }`}
           id="navbar-dropdown"
         >
@@ -89,9 +89,9 @@ export default function Navbar() {
                 className="block py-2 px-3 rounded hover:bg-gray-100  md:hover:bg-transparent md:border-0 md:p-0 dark:hover:bg-gray-700 dark:text-white md:dark:hover:bg-transparent !duration-0"
               >
                 {darkMode ? (
-                  <FontAwesomeIcon icon={faSun} />
+                  <MdLightMode size={22} />
                 ) : (
-                  <FontAwesomeIcon icon={faMoon} />
+                  <MdDarkMode size={22} />
                 )}
               </button>
             </li>

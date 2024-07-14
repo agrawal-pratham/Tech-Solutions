@@ -1,5 +1,5 @@
+import Navbar from "@/components/Shared/Navbar/Navbar";
 import Hero from "../Hero/Hero";
-import Navbar from "../Shared/Navbar/Navbar";
 
 export default function Header() {
   return (
