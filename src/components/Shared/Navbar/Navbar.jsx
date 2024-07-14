@@ -34,6 +34,17 @@ export default function Navbar() {
     setIsMenuOpen((p) => !p);
   };
 
+  const darkModeSettings = () => {
+    return (
+      <button
+        onClick={handleChangeTheme}
+        className="block py-2 px-3 rounded hover:bg-gray-100  md:hover:bg-transparent md:border-0 md:p-0 dark:hover:bg-gray-700 dark:text-white md:dark:hover:bg-transparent !duration-0"
+      >
+        {darkMode ? <MdLightMode size={22} /> : <MdDarkMode size={22} />}
+      </button>
+    );
+  };
+
   return (
     <nav
       className={`bg-white z-[9999]  border-gray-200 dark:bg-gray-900 dark:border-gray-700 w-full block fixed top-0 shadow-md `}
@@ -50,18 +61,21 @@ export default function Navbar() {
             alt="Techo Solution Logo"
           />
         </a>
-        <button
-          onClick={toggleMenu}
-          type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-        >
-          <span className="sr-only">Open main menu</span>
-          {isMenuOpen ? (
-            <IoCloseCircleOutline size={22} />
-          ) : (
-            <HiOutlineMenu size={22} />
-          )}
-        </button>
+        <div className="inline-flex items-center">
+          <span className="visible md:hidden">{darkModeSettings()}</span>
+          <button
+            onClick={toggleMenu}
+            type="button"
+            className=" p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          >
+            <span className="sr-only">Open main menu</span>
+            {isMenuOpen ? (
+              <IoCloseCircleOutline size={22} />
+            ) : (
+              <HiOutlineMenu size={22} />
+            )}
+          </button>
+        </div>
         <div
           className={`w-full md:block md:w-auto md:max-h-dvh transition-all ease-in-out overflow-hidden  duration-1000 ${
             isMenuOpen ? "max-h-svh" : "max-h-0"
@@ -83,18 +97,7 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
-            <li>
-              <button
-                onClick={handleChangeTheme}
-                className="block py-2 px-3 rounded hover:bg-gray-100  md:hover:bg-transparent md:border-0 md:p-0 dark:hover:bg-gray-700 dark:text-white md:dark:hover:bg-transparent !duration-0"
-              >
-                {darkMode ? (
-                  <MdLightMode size={22} />
-                ) : (
-                  <MdDarkMode size={22} />
-                )}
-              </button>
-            </li>
+            <li className="hidden md:block">{darkModeSettings()}</li>
           </ul>
         </div>
       </div>
