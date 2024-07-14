@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="flex items-center justify-center">
         <div className="p-4 md:pl-8 md:text-left xs:text-center">
           <div className="mb-2">
-            <Slide duration={2000} delay={0} fraction={0.1}>
+            <Slide triggerOnce delay={0} direction="left">
               <h4 className="text-4xl font-bold text-gray-900 md:text-5xl dark:text-slate-200">
                 Easy Consulting <br />
                 Start Your{" "}
