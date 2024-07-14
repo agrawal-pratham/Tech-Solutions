@@ -82,7 +82,7 @@ export default function Navbar() {
           />
         </a>
         <div className="inline-flex items-center">
-          {/* <span className="visible md:hidden">{darkModeSettings()}</span> */}
+          <span className="visible md:hidden">{darkModeSettings()}</span>
           <button
             onClick={toggleMenu}
             type="button"
