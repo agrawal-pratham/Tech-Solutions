@@ -1,4 +1,6 @@
 import { useThemeContext } from "@/context/ThemeContext";
+// import { driver } from "driver.js";
+// import "driver.js/dist/driver.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
@@ -25,6 +27,23 @@ export default function Navbar() {
     handleHashChange();
     window.addEventListener("hashchange", handleHashChange);
 
+    // const driverObj = driver({
+    //   showProgress: false,
+    //   showButtons: ["next"],
+    //   steps: [
+    //     {
+    //       element: "#dark-mode-settings",
+    //       popover: {
+    //         title: "Dark Mode Settings",
+    //         description:
+    //           "Here is the code example showing animated tour. Let's walk you through it.",
+    //       },
+    //     },
+    //   ],
+    // });
+
+    // driverObj.drive();
+
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
     };
@@ -37,6 +56,7 @@ export default function Navbar() {
   const darkModeSettings = () => {
     return (
       <button
+        id="dark-mode-settings"
         onClick={handleChangeTheme}
         className="block py-2 px-3 rounded hover:bg-gray-100  md:hover:bg-transparent md:border-0 md:p-0 dark:hover:bg-gray-700 dark:text-white md:dark:hover:bg-transparent !duration-0"
       >
@@ -62,7 +82,7 @@ export default function Navbar() {
           />
         </a>
         <div className="inline-flex items-center">
-          <span className="visible md:hidden">{darkModeSettings()}</span>
+          {/* <span className="visible md:hidden">{darkModeSettings()}</span> */}
           <button
             onClick={toggleMenu}
             type="button"
