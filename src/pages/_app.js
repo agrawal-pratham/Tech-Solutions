@@ -44,9 +44,9 @@ export default function App({ Component, pageProps }) {
           content="https://solutions.agrawalpratham.in/twitter-image.jpg"
         />
         <link rel="icon" href="/favicon.ico" />
-      </Head>{" "}
+      </Head>
       <ThemeContextProvider>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </ThemeContextProvider>
     </>
   );

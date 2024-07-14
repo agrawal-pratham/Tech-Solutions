@@ -1,3 +1,5 @@
+import { Fade } from "react-awesome-reveal";
+
 const data = [
   {
     title: "Google Chrome",
@@ -46,17 +48,19 @@ const BrowserSupport = () => {
             data-aos-offset={100}
             data-aos-duration={600}
           >
-            <img
-              className="w-20 h-20 mb-4 rounded-full"
-              src={item.icon}
-              alt={item.title}
-            />
-            <h6 className="text-lg font-semibold text-gray-800 dark:text-white text-center mb-2">
-              {item.title}
-            </h6>
-            <p className="text-center text-gray-600 dark:text-gray-400">
-              {item.subtitle}
-            </p>
+            <Fade triggerOnce duration={i * 500}>
+              <img
+                className="w-20 h-20 mb-4 rounded-full"
+                src={item.icon}
+                alt={item.title}
+              />
+              <h6 className="text-lg font-semibold text-gray-800 dark:text-white text-center mb-2">
+                {item.title}
+              </h6>
+              <p className="text-center text-gray-600 dark:text-gray-400">
+                {item.subtitle}
+              </p>
+            </Fade>
           </div>
         ))}
       </div>

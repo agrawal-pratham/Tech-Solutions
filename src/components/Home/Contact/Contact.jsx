@@ -9,13 +9,13 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-12 bg-bg_light_2 dark:bg-bg_dark_2">
-      <div className="container mx-auto px-4 ">
+      <div className="container  mx-auto px-4 ">
         <div className="flex flex-wrap">
           <div className="w-full md:w-1/2">
             <Fade duration={1500} direction="left" triggerOnce>
               <form
                 onSubmit={handleSubmit}
-                className="bg-bg_light_2 dark:bg-bg_dark_2 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+                className="bg-bg_light_2 dark:bg-bg_dark_2 shadow-md rounded px-8 pt-6 pb-8 mb-4 backdrop-blur-md"
               >
                 <h4 className="text-xl font-semibold text-primary dark:text-blue-500 mb-2">
                   CONTACT US
