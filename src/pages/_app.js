@@ -6,11 +6,6 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Tech Solutions - Your Partner in Innovation</title>
-        <meta
-          name="description"
-          content="Tech Solutions provides innovative solutions for your tech needs. From web development to AI, we've got you covered."
-        />
         <meta
           name="keywords"
           content="tech solutions, web development, AI, innovation, technology, pratham, full stack"

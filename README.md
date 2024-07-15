@@ -1,40 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tech Solutions
+
+## Overview
+
+Tech Solutions is a modern, responsive landing page built with Next.js and Tailwind CSS. It serves as a professional portfolio and a landing page for service-based companies offering full web development services. This project showcases various interactive web elements and advanced web development techniques.
+
+## Features
+
+- Next.js for server-side rendering and fast performance.
+- Tailwind CSS for utility-first CSS styling.
+- React-Awesome-Reveal for beautiful animations and reveals.
+- react-icons for easy integration of popular icons.
+- react-count-up for animated counting numbers.
+- react-syntax-highlighter for displaying code snippets.
+- react-typed for typing animations.
+- SEO optimized with appropriate meta tags, Open Graph tags, Twitter cards, and structured data.
+
+## Live Demo
+
+Check out the live demo [here](https://solutions.agrawalpratham.in/).
+
+## Screenshots
+
+![Landing Page](public/image.png)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js
+- npm or yarn
+
+### Installation
+
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/agrawal-pratham/Tech-Solutions.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+  cd Tech-Solutions
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Install dependencies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+  npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Start the server
 
-## Learn More
+```bash
+  npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+├── components    # Reusable components
+├── pages         # Next.js pages
+├── public        # Static assets
+├── styles        # Global styles and Tailwind CSS configurations
+├── utils         # Utility functions
+└── README.md     # Project documentation
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Libraries and Technologies Used
 
-## Deploy on Vercel
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Awesome Reveal](https://react-awesome-reveal.morello.dev/)
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [react-count-up](https://github.com/glennreyes/react-countup)
+- [react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
+- [react-typed](https://github.com/ssbeefeater/react-typed)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions are welcome! Please open an issue or submit a pull request for any bugs, enhancements, or features.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contact
+
+Created by [Pratham Agrawal](https://agrawalpratham.in/). Feel free to reach out!
