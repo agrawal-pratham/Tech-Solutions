@@ -37,6 +37,10 @@ export default function Home() {
           content="Tech Solutions provides innovative solutions for your tech needs. From web development to AI, we've got you covered."
         />
         <meta
+          name="keywords"
+          content="tech solutions, web development, innovation, technology, pratham, full stack"
+        />
+        <meta
           property="og:title"
           content="Tech Solutions - A Project by Pratham Agrawal"
         />
