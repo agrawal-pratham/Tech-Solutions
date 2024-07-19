@@ -1,6 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import Navbar from '@/components/Shared/Navbar/Navbar';
+import Footer from '@/components/Home/Footer/Footer';
+import HeadlineIntro from '@/components/About/HeadlineIntro';
+import OurStory from '@/components/About/OurStory';
+import OurTeam from '@/components/About/OurTeam';
+import ValuesMission from '@/components/About/Values';
+import CallToAction from '@/components/About/ContactUs';
 
 export default function About() {
     return (
@@ -10,16 +16,15 @@ export default function About() {
                 <meta name="description" content="Learn more about our company and mission." />
             </Head>
             <section
-                id="header"
-                className="bg-bg_light dark:bg-bg_dark w-full "
-            >
+                className="md:pt-32 xs:pt-20 xs:pb-2  xs:h-auto ">
                 <Navbar />
 
-                <div className='text-white'>
-                    <h1>About Us</h1>
-                    <p>Tell the world about your amazing company or project here!</p>
-                    {/* Add more content as needed */}
-                </div>
+                <HeadlineIntro/>
+                <OurStory/>
+                <OurTeam/>
+                <ValuesMission/>
+                <CallToAction/>
+                <Footer/>
             </section>
         </>
     );
