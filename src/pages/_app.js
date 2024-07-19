@@ -1,3 +1,4 @@
+import ScrollTop from "@/components/Shared/ScrollTop/ScrollTop";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import "@/styles/globals.css";
 import Head from "next/head";
@@ -15,7 +16,9 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeContextProvider>
+
         <Component {...pageProps} />
+<ScrollTop/>        
       </ThemeContextProvider>
     </>
   );
