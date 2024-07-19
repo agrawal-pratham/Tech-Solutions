@@ -2,6 +2,7 @@ import { useThemeContext } from "@/context/ThemeContext";
 // import { driver } from "driver.js";
 // import "driver.js/dist/driver.css";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoCloseCircleOutline } from "react-icons/io5";
@@ -70,8 +71,8 @@ export default function Navbar() {
       className={`bg-white z-[9999]  border-gray-200 dark:bg-gray-900 dark:border-gray-700 w-full block fixed top-0 shadow-md `}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4  bg-white dark:bg-gray-900">
-        <a
-          href="#home"
+        <Link
+          href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <Image
@@ -80,7 +81,7 @@ export default function Navbar() {
             height={80}
             alt="Techo Solution Logo"
           />
-        </a>
+        </Link>
         <div className="inline-flex items-center">
           <span className="visible md:hidden">{darkModeSettings()}</span>
           <button

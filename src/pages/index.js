@@ -5,6 +5,7 @@ import Contact from "@/components/Home/Contact/Contact";
 import Footer from "@/components/Home/Footer/Footer";
 import HappyClient from "@/components/Home/HappyClients/HappyClients";
 import Header from "@/components/Home/Header/Header";
+import Hero from "@/components/Home/Hero/Hero";
 import Pricing from "@/components/Home/Pricing/Pricing";
 import ScrollTop from "@/components/Shared/ScrollTop/ScrollTop";
 import { Inter } from "next/font/google";
@@ -74,6 +75,7 @@ export default function Home() {
       </Head>
       <main className={`${inter.className}`}>
         <Header />
+        <Hero />
         <BuildTools />
         <About />
         <BrowserSupport />
@@ -81,7 +83,6 @@ export default function Home() {
         <Pricing />
         <Contact />
         <Footer />
-        <ScrollTop />
       </main>
     </>
   );
