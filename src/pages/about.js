@@ -49,16 +49,15 @@ export default function About() {
           href="https://solutions.agrawalpratham.in/about"
         />
       </Head>
-      <section className="md:pt-32 xs:pt-20 xs:pb-2  xs:h-auto ">
-        <Navbar />
-
+      <Navbar />
+      <div className="!snap-y snap-mandatory ">
         <HeadlineIntro />
         <OurStory />
         <OurTeam />
         <ValuesMission />
         <CallToAction />
-        <Footer />
-      </section>
+      </div>
+      <Footer />
     </>
   );
 }
