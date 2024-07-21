@@ -9,10 +9,11 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "Services", href: "#services" },
-  { name: "Reviews", href: "#reviews" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "#" },
+  { name: "Reviews", href: "#" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -22,7 +23,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleHashChange = () => {
-      setActiveHash(window.location.hash);
+      setActiveHash(window.location.pathname);
       setIsMenuOpen(false);
     };
     handleHashChange();
