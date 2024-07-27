@@ -1,6 +1,7 @@
 import ScrollTop from "@/components/Shared/ScrollTop/ScrollTop";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
         <ScrollTop />
       </ThemeContextProvider>
+      <Analytics />
     </>
   );
 }
