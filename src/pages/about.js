@@ -33,7 +33,7 @@ export default function About() {
           property="og:url"
           content="https://solutions.agrawalpratham.in/about"
         />
-        <meta property="og:image" content="/images/about-us.jpg" />
+        {/* <meta property="og:image" content="/images/about-us.jpg" /> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
