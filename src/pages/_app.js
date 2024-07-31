@@ -23,6 +23,14 @@ export default function App({ Component, pageProps }) {
           name="keywords"
           content="tech solutions, web development, AI, innovation, technology, pratham, full stack"
         />
+        <meta
+          property="og:image"
+          content="https://solutions.agrawalpratham.in/logo-bg.png"
+        />
+        <meta
+          name="twitter:image"
+          content="https://solutions.agrawalpratham.in/logo-bg.png"
+        />
         <meta name="author" content="Pratham Agrawal" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
