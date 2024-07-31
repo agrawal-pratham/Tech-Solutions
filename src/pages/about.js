@@ -43,7 +43,7 @@ export default function About() {
           name="twitter:description"
           content="Learn more about Solutions by Pratham Agrawal, our mission, values, and the team behind our success."
         />
-        <meta name="twitter:image" content="/images/about-us.jpg" />
+        {/* <meta name="twitter:image" content="/images/about-us.jpg" /> */}
         <link
           rel="canonical"
           href="https://solutions.agrawalpratham.in/about"

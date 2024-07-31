@@ -7,7 +7,6 @@ import HappyClient from "@/components/Home/HappyClients/HappyClients";
 import Header from "@/components/Home/Header/Header";
 import Hero from "@/components/Home/Hero/Hero";
 import Pricing from "@/components/Home/Pricing/Pricing";
-import ScrollTop from "@/components/Shared/ScrollTop/ScrollTop";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 
@@ -51,7 +50,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://solutions.agrawalpratham.in/logo-bg.png"
+          content="https://solutions.agrawalpratham.in/logo-bg-2.png"
         />
         <meta property="og:url" content="https://solutions.agrawalpratham.in" />
         <meta property="og:type" content="website" />
@@ -64,10 +63,10 @@ export default function Home() {
           name="twitter:description"
           content="Tech Solutions provides innovative solutions for your tech needs. From web development to AI, we've got you covered."
         />
-        <meta
+        {/* <meta
           name="twitter:image"
           content="https://solutions.agrawalpratham.in/logo-bg.png"
-        />
+        /> */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
