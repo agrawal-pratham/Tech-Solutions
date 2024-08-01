@@ -13,7 +13,6 @@ export const ThemeContextProvider = ({ children }) => {
       (window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
-      localStorage.clear();
       document.documentElement.classList.add(Theme.Dark);
       setDarkMode(true);
     }

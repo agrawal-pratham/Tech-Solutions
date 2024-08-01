@@ -6,7 +6,7 @@ const Hero = () => {
   const { darkMode } = useThemeContext();
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:pt-32 xs:pt-20 xs:pb-2 bg-bg_light dark:bg-bg_dark md:h-[100vh]  xs:h-auto ">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:pt-32 xs:pt-20 xs:pb-2 bg-bg_light dark:bg-bg_dark md:h-[100vh]  xs:h-auto overflow-hidden ">
       <div className="flex items-center justify-center">
         <div className="p-4 md:pl-8 md:text-left xs:text-center">
           <div className="mb-2">
