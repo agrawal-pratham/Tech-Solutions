@@ -1,4 +1,5 @@
 import CookieBanner from "@/components/Cookie/Cookie";
+import DisclaimerModal from "@/components/Disclaimer/Disclaimer";
 import About from "@/components/Home/About/About";
 import BrowserSupport from "@/components/Home/BrowserSupport/BrowserSupport";
 import BuildTools from "@/components/Home/BuildTools/BuildTools";
@@ -84,6 +85,7 @@ export default function Home() {
         <Contact />
         <Footer />
         <CookieBanner />
+        <DisclaimerModal />
       </main>
     </>
   );
