@@ -5,13 +5,15 @@ const DisclaimerModal = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsOpen(true);
+      let toShow = localStorage.getItem("showDisclaimer");
+      setIsOpen(!toShow);
     }, 3000); // Modal opens after 5 seconds
 
     return () => clearTimeout(timer); // Clean up the timer on component unmount
   }, []);
 
-  const closeModal = () => {
+  const onClick = () => {
+    localStorage.setItem("showDisclaimer", false);
     setIsOpen(false);
   };
 
@@ -36,7 +38,7 @@ const DisclaimerModal = () => {
           substantially as additional features and refinements are introduced.
         </p>
         <button
-          onClick={closeModal}
+          onClick={onClick}
           className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto"
         >
           I Understand
