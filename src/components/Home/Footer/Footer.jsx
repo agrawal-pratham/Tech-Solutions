@@ -23,17 +23,20 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/careers" className="hover:underline">
+                  <a href="/#" className="hover:underline">
                     Careers
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/brand-center" className="hover:underline">
+                  <a href="/#" className="hover:underline">
                     Brand Center
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/blog" className="hover:underline">
+                  <a
+                    href="https://blogs.agrawalpratham.in/"
+                    className="hover:underline"
+                  >
                     Blog
                   </a>
                 </li>
@@ -45,15 +48,13 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="/discord-server" className="hover:underline">
+                  <a href="https://discord.com" className="hover:underline">
                     Discord Server
                   </a>
                 </li>
                 <li className="mb-4">
                   <a
                     href="https://www.linkedin.com/in/agrawalpratham/"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="hover:underline"
                   >
                     LinkedIn
@@ -62,8 +63,6 @@ const Footer = () => {
                 <li className="mb-4">
                   <a
                     href="https://x.com/agrawal_2002"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="hover:underline"
                   >
                     Twitter
@@ -72,15 +71,13 @@ const Footer = () => {
                 <li className="mb-4">
                   <a
                     href="https://www.facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="hover:underline"
                   >
                     Facebook
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/contact-us" className="hover:underline">
+                  <a href="/#contact" className="hover:underline">
                     Contact Us
                   </a>
                 </li>
@@ -92,17 +89,17 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="/privacy-policy" className="hover:underline">
+                  <a href="/#" className="hover:underline">
                     Privacy Policy
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/licensing" className="hover:underline">
+                  <a href="/#" className="hover:underline">
                     Licensing
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/terms-conditions" className="hover:underline">
+                  <a href="/#" className="hover:underline">
                     Terms & Conditions
                   </a>
                 </li>
@@ -114,22 +111,22 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="/ios" className="hover:underline">
+                  <a href="/#" className="hover:underline">
                     iOS
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/android" className="hover:underline">
+                  <a href="/#" className="hover:underline">
                     Android
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/windows" className="hover:underline">
+                  <a href="/#" className="hover:underline">
                     Windows
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/macos" className="hover:underline">
+                  <a href="/#" className="hover:underline">
                     MacOS
                   </a>
                 </li>
@@ -141,7 +138,6 @@ const Footer = () => {
               &copy; 2024{" "}
               <a
                 href="https://agrawalpratham.in/"
-                target="_blank"
                 rel="author"
                 referrerPolicy="origin"
               >
@@ -152,7 +148,6 @@ const Footer = () => {
             <div className="flex xs:justify-center sm:mt-0 xs:mt-4 space-x-5">
               <a
                 href="https://www.facebook.com"
-                target="_blank"
                 referrerPolicy="origin-when-cross-origin"
                 className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
               >
@@ -161,7 +156,6 @@ const Footer = () => {
               </a>
               <a
                 href="https://discord.com"
-                target="_blank"
                 referrerPolicy="origin-when-cross-origin"
                 className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
               >
@@ -171,7 +165,6 @@ const Footer = () => {
               <a
                 href="https://x.com/agrawal_2002"
                 rel="author"
-                target="_blank"
                 referrerPolicy="origin-when-cross-origin"
                 className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
               >
@@ -181,7 +174,6 @@ const Footer = () => {
               <a
                 href="https://github.com/pratham2002"
                 rel="author"
-                target="_blank"
                 referrerPolicy="origin-when-cross-origin"
                 className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
               >
@@ -191,7 +183,6 @@ const Footer = () => {
               <a
                 href="https://www.linkedin.com/in/agrawalpratham/"
                 rel="author"
-                target="_blank"
                 referrerPolicy="origin-when-cross-origin"
                 className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
               >
