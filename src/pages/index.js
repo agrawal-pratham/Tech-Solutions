@@ -1,12 +1,9 @@
-import CookieBanner from "@/components/Cookie/Cookie";
 import DisclaimerModal from "@/components/Disclaimer/Disclaimer";
 import About from "@/components/Home/About/About";
 import BrowserSupport from "@/components/Home/BrowserSupport/BrowserSupport";
 import BuildTools from "@/components/Home/BuildTools/BuildTools";
 import Contact from "@/components/Home/Contact/Contact";
-import Footer from "@/components/Home/Footer/Footer";
 import HappyClient from "@/components/Home/HappyClients/HappyClients";
-import Header from "@/components/Home/Header/Header";
 import Hero from "@/components/Home/Hero/Hero";
 import Pricing from "@/components/Home/Pricing/Pricing";
 import { Inter } from "next/font/google";
@@ -75,7 +72,6 @@ export default function Home() {
         />
       </Head>
       <main className={`${inter.className}`}>
-        <Header />
         <Hero />
         <BuildTools />
         <About />
@@ -83,8 +79,6 @@ export default function Home() {
         <HappyClient />
         <Pricing />
         <Contact />
-        <Footer />
-        <CookieBanner />
         <DisclaimerModal />
       </main>
     </>

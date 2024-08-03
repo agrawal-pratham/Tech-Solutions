@@ -3,8 +3,6 @@ import HeadlineIntro from "@/components/About/HeadlineIntro";
 import OurStory from "@/components/About/OurStory";
 import OurTeam from "@/components/About/OurTeam";
 import ValuesMission from "@/components/About/Values";
-import Footer from "@/components/Home/Footer/Footer";
-import Navbar from "@/components/Shared/Navbar/Navbar";
 import Head from "next/head";
 
 export default function About() {
@@ -49,7 +47,6 @@ export default function About() {
           href="https://solutions.agrawalpratham.in/about"
         />
       </Head>
-      <Navbar />
       <div className="!snap-y snap-mandatory ">
         <HeadlineIntro />
         <OurStory />
@@ -57,7 +54,6 @@ export default function About() {
         <ValuesMission />
         <CallToAction />
       </div>
-      <Footer />
     </>
   );
 }

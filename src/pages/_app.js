@@ -1,3 +1,6 @@
+import CookieBanner from "@/components/Cookie/Cookie";
+import Footer from "@/components/Home/Footer/Footer";
+import Header from "@/components/Home/Header/Header";
 import ScrollTop from "@/components/Shared/ScrollTop/ScrollTop";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import "@/styles/globals.css";
@@ -56,7 +59,10 @@ export default function App({ Component, pageProps }) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <ThemeContextProvider>
+        <Header />
         <Component {...pageProps} />
+        <Footer />
+        <CookieBanner />
         <ScrollTop />
       </ThemeContextProvider>
       <GoogleAnalytics gaId="G-NLPQCWCG1G" />
