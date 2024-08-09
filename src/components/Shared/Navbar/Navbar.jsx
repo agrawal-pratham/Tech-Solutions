@@ -11,9 +11,9 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Services", href: "#" },
-  { name: "Reviews", href: "#" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Services", href: "/services" },
+  { name: "Reviews", href: "/reviews" },
+  { name: "Contact", href: "/contact-us" },
 ];
 
 export default function Navbar() {
@@ -106,10 +106,10 @@ export default function Navbar() {
         >
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             {navItems.map((item) => (
-              <li key={item.href}>
+              <li key={item.href} className="group">
                 <a
                   href={item.href}
-                  className={`block py-2 px-3 rounded md:bg-transparent md:p-0 ${
+                  className={` block py-2 px-3 rounded md:bg-transparent md:p-0 ${
                     activeHash === item.href
                       ? "text-blue-700 dark:text-blue-500"
                       : "text-gray-900 dark:text-white"
@@ -117,6 +117,13 @@ export default function Navbar() {
                 >
                   {item.name}
                 </a>
+                <span
+                  className={`block ${
+                    activeHash === item.href
+                      ? "max-w-full bg-blue-500"
+                      : "max-w-0 dark:bg-white bg-gray-500"
+                  } group-hover:max-w-full transition-all duration-500 h-1`}
+                ></span>
               </li>
             ))}
             <li className="hidden md:block">{darkModeSettings()}</li>

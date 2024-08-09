@@ -23,13 +23,13 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/#" className="hover:underline">
+                  <a href="/careers" className="hover:underline">
                     Careers
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/#" className="hover:underline">
-                    Brand Center
+                  <a href="/services" className="hover:underline">
+                    Services
                   </a>
                 </li>
                 <li className="mb-4">
@@ -77,7 +77,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/#contact" className="hover:underline">
+                  <a href="/contact-us" className="hover:underline">
                     Contact Us
                   </a>
                 </li>
@@ -89,17 +89,17 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="/#" className="hover:underline">
+                  <a href="/privacy-policy" className="hover:underline">
                     Privacy Policy
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/#" className="hover:underline">
+                  <a href="/licensing" className="hover:underline">
                     Licensing
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/#" className="hover:underline">
+                  <a href="/tnc" className="hover:underline">
                     Terms & Conditions
                   </a>
                 </li>
