@@ -17,7 +17,7 @@ Tech Solutions is a modern, responsive landing page built with Next.js and Tailw
 
 ## Live Demo
 
-Check out the live demo [here](https://solutions.agrawalpratham.in/).
+Check out the live demo [here](https://solutions.agrawalpratham.in).
 
 ## Screenshots
 
