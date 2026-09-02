@@ -3,60 +3,75 @@ import { Tab, TabGroup, TabList, TabPanels } from "@headlessui/react";
 import PricingCard from "./PricingCard";
 import { PricingData } from "./pricingData";
 
+const serviceCategories = [
+  { name: "Web Dev", icon: "/s1.png", color: "#3B82F6" },
+  { name: "UI/UX Design", icon: "/s2.png", color: "#8B5CF6" },
+  { name: "Cloud & DevOps", icon: "/s3.png", color: "#10B981" },
+  { name: "AI Solutions", icon: "/s4.png", color: "#F59E0B" },
+  { name: "Mobile Apps", icon: "/s5.png", color: "#06B6D4" },
+  { name: "E-Commerce", icon: "/s6.png", color: "#F43F5E" },
+];
+
 const Pricing = () => {
   return (
-    <section className="pricing py-8 px-4 bg-bg_light dark:bg-bg_dark ">
-      <h4 className="text-center uppercase text-primary dark:text-blue-600">
-        Pricing
-      </h4>
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-          CHOOSE PLAN
-        </h2>
-      </div>
-      <div className="mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-colors">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-xs font-semibold uppercase tracking-wider text-primary dark:text-blue-400">
+            Transparent Investment
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mt-2 mb-4">
+            Predictable Milestone-Based Pricing
+          </h2>
+          <p className="text-base text-gray-600 dark:text-gray-400">
+            Select a service category below to view estimated milestones, deliverables, and timelines. No hidden charges or surprise invoices.
+          </p>
+        </div>
+
         <TabGroup>
-          <TabList className="flex justify-center gap-6  flex-wrap flex-row">
-            {[
-              "/s1.png",
-              "/s2.png",
-              "/s3.png",
-              "/s4.png",
-              "/s5.png",
-              "/s6.png",
-            ].map((src, index) => (
+          {/* Category Tabs Bar */}
+          <TabList className="flex justify-center gap-3 sm:gap-6 flex-wrap mb-10">
+            {serviceCategories.map((cat, index) => (
               <Tab
                 key={index}
-                className="relative h-24 w-24 mb-12 rounded-full transition duration-300"
+                className="flex flex-col items-center gap-2 focus:outline-none group"
               >
                 {({ selected }) => (
                   <>
                     <div
-                      className={`h-full w-full rounded-full bg-slate-50 transition-all ease-out duration-300 border-none`}
-                      style={{
-                        outlineOffset: selected ? 5 : 0,
-
-                        outline: `7px solid ${getColorByIndex(index)}`,
-                        // border: `7px solid ${getColorByIndex(index)}`,
-                        backgroundColor: selected
-                          ? getColorByIndexForBackground(index)
-                          : "",
-                      }}
+                      className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center p-3 transition-all duration-300 ${
+                        selected
+                          ? "bg-blue-600 shadow-lg scale-105"
+                          : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+                      }`}
                     >
                       <img
-                        src={src}
-                        alt=""
-                        className="absolute w-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                        src={cat.icon}
+                        alt={cat.name}
+                        className={`w-8 h-8 sm:w-10 sm:h-10 object-contain transition-transform group-hover:scale-110 ${
+                          selected ? "brightness-0 invert" : ""
+                        }`}
                       />
                     </div>
+                    <span
+                      className={`text-xs font-bold transition-colors ${
+                        selected
+                          ? "text-primary dark:text-blue-400"
+                          : "text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                      }`}
+                    >
+                      {cat.name}
+                    </span>
                   </>
                 )}
               </Tab>
             ))}
           </TabList>
-          <TabPanels className="flex justify-center space-x-4  flex-wrap flex-row">
+
+          {/* Pricing Panels */}
+          <TabPanels>
             {PricingData.length === 0 ? (
-              <div className="spinner text-center mt-3">
+              <div className="spinner text-center py-10">
                 <LoadingSpinner />
               </div>
             ) : (
@@ -69,29 +84,6 @@ const Pricing = () => {
       </div>
     </section>
   );
-};
-
-const getColorByIndex = (index) => {
-  const colors = [
-    "#ffccd3",
-    "#a2ffd2",
-    "#fdd2ff",
-    "#CBEDFF",
-    "#dfdaff",
-    "#ffeb94",
-  ];
-  return colors[index];
-};
-const getColorByIndexForBackground = (index) => {
-  const colors = [
-    "#FF4F66",
-    "#4ED797",
-    "#F78CFF",
-    "#76CDFF",
-    "#755BFF",
-    "#ffd30f",
-  ];
-  return colors[index];
 };
 
 export default Pricing;
