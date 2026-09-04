@@ -6,6 +6,7 @@ import Contact from "@/components/Home/Contact/Contact";
 import HappyClient from "@/components/Home/HappyClients/HappyClients";
 import Hero from "@/components/Home/Hero/Hero";
 import Pricing from "@/components/Home/Pricing/Pricing";
+import TestimonialSpotlight from "@/components/Home/TestimonialSpotlight";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 
@@ -23,29 +24,29 @@ export default function Home() {
       url: "https://agrawalpratham.in",
     },
     description:
-      "Tech Solutions provides innovative solutions for your tech needs. From web development to AI, we've got you covered.",
-    image: "https://solutions.agrawalpratham.in/og-image.jpg",
+      "Tech Solutions provides innovative engineering solutions for your tech needs. From full-stack web applications to AI and cloud architecture.",
+    image: "https://solutions.agrawalpratham.in/logo-bg-2.png",
   };
 
   return (
     <>
       <Head>
-        <title>Tech Solutions - A Project by Pratham Agrawal</title>
+        <title>Tech Solutions - Modern Web Engineering, Cloud & AI</title>
         <meta
           name="description"
-          content="Tech Solutions provides innovative solutions for your tech needs. From web development to AI, we've got you covered."
+          content="Tech Solutions engineers scalable digital products for modern enterprises. Explore our full-stack web development, AI automations, and resilient cloud platforms."
         />
         <meta
           name="keywords"
-          content="tech solutions, web development, innovation, technology, pratham, full stack"
+          content="Tech Solutions, web development, Next.js 14, full stack, AI automation, cloud architecture, Pratham Agrawal"
         />
         <meta
           property="og:title"
-          content="Tech Solutions - A Project by Pratham Agrawal"
+          content="Tech Solutions - Modern Web Engineering, Cloud & AI"
         />
         <meta
           property="og:description"
-          content="Tech Solutions provides innovative solutions for your tech needs. From web development to AI, we've got you covered."
+          content="High-performance web applications, AI automations, and scalable cloud systems engineered for your business."
         />
         <meta
           property="og:image"
@@ -56,16 +57,13 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Tech Solutions - A Project by Pratham Agrawal"
+          content="Tech Solutions - Modern Web Engineering, Cloud & AI"
         />
         <meta
           name="twitter:description"
-          content="Tech Solutions provides innovative solutions for your tech needs. From web development to AI, we've got you covered."
+          content="High-performance web applications, AI automations, and scalable cloud systems."
         />
-        {/* <meta
-          name="twitter:image"
-          content="https://solutions.agrawalpratham.in/logo-bg.png"
-        /> */}
+        <link rel="canonical" href="https://solutions.agrawalpratham.in" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -75,8 +73,9 @@ export default function Home() {
         <Hero />
         <BuildTools />
         <About />
-        <BrowserSupport />
         <HappyClient />
+        <TestimonialSpotlight />
+        <BrowserSupport />
         <Pricing />
         <Contact />
         <DisclaimerModal />
