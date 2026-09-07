@@ -1,63 +1,97 @@
 import { TabPanel } from "@headlessui/react";
+import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
+import { FiArrowRight, FiCheck } from "react-icons/fi";
 
 const PricingCard = ({ data, id }) => {
   return (
-    <TabPanel>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {data.map(({ title, name, price }, index) => (
+    <TabPanel className="w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-4">
+        {data.map((plan, index) => (
           <Fade
             direction="up"
-            duration={1000 + index * 250}
+            duration={700 + index * 150}
             key={index}
             triggerOnce
           >
             <div
-              className={`pricingCard p-6 rounded-lg shadow-lg`}
-              style={{
-                backgroundColor: getColorByIndex(id),
-              }}
+              className={`relative flex flex-col justify-between rounded-3xl p-7 transition-all duration-300 ${
+                plan.popular
+                  ? "bg-white dark:bg-gray-800 border-2 border-primary dark:border-blue-500 shadow-xl lg:-translate-y-2"
+                  : "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg"
+              }`}
             >
-              <div className="pricingBox text-center mb-4">
-                <h4 className="text-xl font-semibold text-gray-900 ">
-                  {title}
-                </h4>
-                <p className="pricePlan text-2xl font-bold text-blue-500">
-                  ${price}/<span className="text-base">month</span>
+              {plan.popular && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <span className="px-3.5 py-1 rounded-full bg-primary text-white text-[11px] font-bold uppercase tracking-wider shadow">
+                    Most Popular
+                  </span>
+                </div>
+              )}
+
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary dark:text-blue-400">
+                    {plan.name}
+                  </span>
+                  <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">
+                    {plan.timeline}
+                  </span>
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  {plan.title}
+                </h3>
+
+                <div className="mb-4">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white">
+                      ${plan.price}
+                    </span>
+                    <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                      / {plan.billing}
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                  {plan.description}
                 </p>
-                <h5 className="text-lg text-gray-700 ">{name}</h5>
-                <p className="planDescription text-gray-800 ">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Sunt, autem iusto aliquam labore sed error molestias vel
-                  corporis explicabo vitae adipisci laudantium! Tempore quisquam
-                  eos nam omnis voluptates illum, eligendi ipsum, veritatis
-                  facere harum, quo unde? Nulla quos, unde praesentium omnis
-                  maxime ex alias ducimus!
-                </p>
+
+                <div className="space-y-2.5 mb-8">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-400">
+                    What's Included:
+                  </p>
+                  {plan.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-2 text-xs text-gray-700 dark:text-gray-300">
+                      <FiCheck className="text-green-500 mt-0.5 shrink-0" size={14} />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <ul className="space-y-2">
-                <li className="flex items-center">UI/UX Design.</li>
-                <li className="flex items-center">Related statistics.</li>
-                <li className="flex items-center">Business Analysis.</li>
-              </ul>
+
+              <div className="pt-4 border-t border-gray-100 dark:border-gray-700/80">
+                <Link
+                  href={`/contact-us?service=${encodeURIComponent(
+                    `${plan.name} (${plan.title})`
+                  )}`}
+                  className={`w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold transition-all ${
+                    plan.popular
+                      ? "bg-primary hover:bg-blue-700 text-white shadow-md"
+                      : "bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white"
+                  }`}
+                >
+                  Get Started With This Plan
+                  <FiArrowRight size={14} />
+                </Link>
+              </div>
             </div>
           </Fade>
         ))}
       </div>
     </TabPanel>
   );
-};
-
-const getColorByIndex = (index) => {
-  const colors = [
-    "#ffccd3",
-    "#a2ffd2",
-    "#fdd2ff",
-    "#CBEDFF",
-    "#dfdaff",
-    "#ffeb94",
-  ];
-  return colors[index];
 };
 
 export default PricingCard;

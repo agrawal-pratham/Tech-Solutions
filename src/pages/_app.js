@@ -3,28 +3,49 @@ import Footer from "@/components/Home/Footer/Footer";
 import Header from "@/components/Home/Header/Header";
 import ScrollTop from "@/components/Shared/ScrollTop/ScrollTop";
 import { ThemeContextProvider } from "@/context/ThemeContext";
+import { trackPageView } from "@/lib/analytics";
 import "@/styles/globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Script from "next/script";
+import { useEffect } from "react";
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      trackPageView(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
-      <Script id="microsoft-clarity-analytics">
+      {/* Microsoft Clarity Analytics */}
+      <Script
+        id="microsoft-clarity-analytics"
+        strategy="afterInteractive"
+      >
         {`
-       (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "nfjtkrqli4");
-  `}
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "nfjtkrqli4");
+        `}
       </Script>
       <Head>
         <meta
           name="keywords"
-          content="tech solutions, web development, AI, innovation, technology, pratham, full stack"
+          content="tech solutions, web development, AI, innovation, technology, pratham, full stack, cloud architecture, next.js"
         />
         <meta
           property="og:image"
@@ -65,8 +86,15 @@ export default function App({ Component, pageProps }) {
         <CookieBanner />
         <ScrollTop />
       </ThemeContextProvider>
+
+      {/* Google Analytics 4 */}
       <GoogleAnalytics gaId="G-NLPQCWCG1G" />
+
+      {/* Vercel Web Analytics */}
       <Analytics />
+
+      {/* Vercel Speed Insights (Core Web Vitals) */}
+      <SpeedInsights />
     </>
   );
 }
